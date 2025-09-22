@@ -21,9 +21,16 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: adopt-openjdk-installer@1
+- task: Maven@4
   inputs:
-    majorVersion: '14'
-    useLatestOption: 'latest'
-    jdkArchitectureOption: 'x64'
-    jvmOption: 'hotspot'
+    azureSubscription: 'Azure subscription 1(1)(98b63508-3949-41ff-8099-f1bd92405eb6)'
+    mavenPomFile: 'pom.xml'
+    goals: 'test'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+
