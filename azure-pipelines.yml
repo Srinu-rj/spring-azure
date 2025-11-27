@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: 'azure-devops'
+  name: 'devops'
 
 steps:
 - task: Maven@4
